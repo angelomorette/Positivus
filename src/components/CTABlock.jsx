@@ -1,6 +1,7 @@
 "use client"
 import React from "react"
 import styled from "styled-components"
+import { PrimaryButton } from "../styles"
 
 const CTACard = styled.div`
   display: flex;
@@ -37,21 +38,6 @@ const HeroDescription = styled.p`
   font-size: 18px;
   line-height: 100%;
   letter-spacing: 0%;
-`
-const PrimaryButton = styled.button`
-  width: 288px;
-  height: 68px;
-  padding: 20px 35px;
-  border-radius: 14px;
-  border: solid #191A23;
-  background-color: #191A23;
-  color: #fff;
-  cursor: pointer;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 28px;
-  white-space: nowrap;
-  gap: 10px;
 `
 
 export default function CTABlock() {

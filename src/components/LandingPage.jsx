@@ -3,8 +3,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
-import PositiveLogo from '../../public/Logo.svg'
 import Ilustration from '../../public/Illustration.svg'
+import { OutlinedButton, PrimaryButton } from '../styles'
+import Logo from "../../public/Logo"
 
 const PageContainer = styled.div`
   display: flex;
@@ -39,7 +40,6 @@ const NavActions = styled.div`
   align-items: center;
 `
 
-// Hero section components
 const HeroSection = styled.header`
   display: flex;
   flex-direction: row;
@@ -67,39 +67,6 @@ const HeroDescription = styled.span`
   font-size: 400;
   line-height: 28px;
   letter-spacing: 0%;
-`
-
-const OutlinedButton = styled.button`
-  width: 231px;
-  height: 68px;
-  gap: 10px;
-  padding: 20px 35px;
-  border-radius: 14px;
-  border-width: 1px;
-  border: 1px solid #191A23;
-  background-color: #fff;
-  cursor: pointer;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 28px;
-  white-space: nowrap;
-  gap: 10px;
-`
-
-const PrimaryButton = styled.button`
-  width: 264px;
-  height: 68px;
-  padding: 20px 35px;
-  border-radius: 14px;
-  border: solid #191A23;
-  background-color: #191A23;
-  color: #fff;
-  cursor: pointer;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 28px;
-  white-space: nowrap;
-  gap: 10px;
 `
 
 const LogoGrid = styled.div`
@@ -135,13 +102,9 @@ export default function LandingPage() {
   return (
     <PageContainer>
       <NavBar>
-        <a href="/">
-          <Image
-            src={PositiveLogo}
-            alt="Positivus logo"
-            width={219.54}
+        <a href="/" alt="Positivus logo">
+          <Logo width={219.54}
             height={36}
-            style={{ width: '219.54px', height: '36px' }}
           />
         </a>
         <NavActions>

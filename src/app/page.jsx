@@ -7,7 +7,9 @@ import CTABlock from '../components/CTABlock'
 import CaseStudio from '../components/CaseStudio'
 import AccordionList from '../components/AccordionList'
 import TeamGroup from '../components/TeamGroup'
-import CarroselSection from '../components/CarouselSection'
+import Carrosel from '../components/Carousel'
+import Contact from '../components/Contact'
+import Footer from '../components/Footer'
 
 export default function Home() {
   return (
@@ -23,9 +25,10 @@ export default function Home() {
       <SubHeading title="Team" description="Meet the skilled and experienced team behind our successful digital marketing strategies" />
       <TeamGroup />
       <SubHeading title="Testimonials" description="Hear from Our Satisfied Clients: Read Our Testimonials to Learn More about Our Digital Marketing Services" />
-      <CarroselSection />
+      <Carrosel/>
       <SubHeading title="Contact Us" description="Connect with Us: Let's Discuss Your Digital Marketing Needs" />
-      
+      <Contact/>
+      <Footer/>
     </>
   )
 }

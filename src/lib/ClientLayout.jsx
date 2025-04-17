@@ -31,7 +31,7 @@ const GlobalStyle = createGlobalStyle`
   optgroup,
   option,
   label {
-    font-family: inherit;
+    font-family:  var(--font-space-grotesk);
   }
 `
 

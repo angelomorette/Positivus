@@ -51,7 +51,6 @@ const Title = styled.div`
   }
 `
 
-
 const AccordionContent = styled.p`
   font-size: 18px;
   font-weight: 400;

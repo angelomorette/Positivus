@@ -2,7 +2,8 @@
 
 import React from "react"
 import styled from "styled-components"
-
+import { PrimaryButton } from "../styles"
+import LinkedinIcon from "../../public/Linkedin-Icon"
 
 const Card = styled.div`
   display: flex;
@@ -88,23 +89,23 @@ const Div = styled.div`
   padding: 40px 35px 0px 35px;
 `
 
-const PrimaryButton = styled.button`
-  width: 264px;
-  height: 68px;
-  padding: 20px 35px;
-  border-radius: 14px;
-  border: solid #191A23;
-  background-color: #191A23;
-  color: #fff;
-  cursor: pointer;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 28px;
-  white-space: nowrap;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-`
+// const PrimaryButton = styled.button`
+//   width: 264px;
+//   height: 68px;
+//   padding: 20px 35px;
+//   border-radius: 14px;
+//   border: solid #191A23;
+//   background-color: #191A23;
+//   color: #fff;
+//   cursor: pointer;
+//   font-weight: 400;
+//   font-size: 20px;
+//   line-height: 28px;
+//   white-space: nowrap;
+//   gap: 10px;
+//   align-items: center;
+//   justify-content: center;
+// `
 
 const TeamDiv = styled.div`
   display: flex;
@@ -125,7 +126,7 @@ const TeamCard = ({ name, jobTitle, description, image }) => (
           <p>{jobTitle}</p>
         </NameJob>
         <IconContainer>
-          <img src="/Social-icon.svg" alt="LinkedIn" />
+          <LinkedinIcon />
         </IconContainer>
       </AvatarContainer>
     </Header>
