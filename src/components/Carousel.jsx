@@ -2,11 +2,8 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
-import ArrowRight from '../../public/Arrow-right.svg'
-import ArrowLeft from '../../public/Arrow-left.svg'
 import styled from 'styled-components';
 import Dot from '../../public/Dot';
-import { colors } from '../styles/Theme' 
 
 const testimonials = [
   {
@@ -49,7 +46,7 @@ const CarouselContainer = styled.div`
   height: 625px;
   padding-top: 84px;
   padding-bottom: 68px;
-  background: ${colors.primary};
+  background: var(--dark);
   border-radius: 45px;
   overflow: hidden;
   display: flex;
@@ -78,13 +75,8 @@ const CarouselSlide = styled.div`
 
 const TestimonialCard = styled.div`
   position: relative;
-  background: #1A1F2C;
-  border: 1px solid #2A3040;
-  border-radius: 0.5rem;
-  padding: 2rem;
-  margin: 0 auto;
   width: 606px;
-  height: 335px;
+  height: 266px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -93,30 +85,53 @@ const TestimonialCard = styled.div`
   transition: transform 0.3s ease;
 `;
 
+const CardBackground = styled.img.attrs({
+  src: '/Bubble.svg',
+  alt: 'Bubble background'
+})`
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  object-fit: contain;
+`;
+
 const TestimonialText = styled.p`
+  width: 502px;
   color: #C8C8C9;
   font-size: 1rem;
   line-height: 1.6;
   text-align: center;
   margin-bottom: 2rem;
+  z-index: 1;
+  position: relative;
+  margin: 0px;
 `;
 
-const AuthorName = styled.h3`
-  color: #2962FF;
-  font-size: 1.125rem;
-  font-weight: 600;
-  margin-bottom: 0.25rem;
+const Author = styled.div`
+  margin-top: 20px;
+  margin-left: 80px;
+  h4{
+    margin: 0px;
+    color: var(--green);
+    font-weight: 600;
+  }
+  p {
+    margin: 0px;
+    color: var(--white);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 100%;
+  }
 `;
 
 const AuthorPosition = styled.p`
-  color: #8E9196;
-  font-size: 0.875rem;
 `;
 
 const NavigationContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 0 2rem;
   margin-top: auto;
   width: 564px;
@@ -133,16 +148,6 @@ const NavigationButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 9999px;
-  color: #C8C8C9;
-  transition: all 0.2s;
-
-  &:hover {
-    color: #2962FF;
-    background: rgba(41,98,255,0.1);
-  }
 
   &:focus {
     outline: none;
@@ -203,15 +208,18 @@ export const CarouselSection = () => {
       <CarouselWrapper ref={emblaRef}>
         <CarouselTrack>
           {testimonials.map((testimonial, index) => (
-            <CarouselSlide 
+            <CarouselSlide
               key={testimonial.id}
               isSelected={index === selectedIndex}
             >
               <TestimonialCard isSelected={index === selectedIndex}>
+                <CardBackground />
                 <TestimonialText>"{testimonial.content}"</TestimonialText>
-                <AuthorName>{testimonial.author}</AuthorName>
-                <AuthorPosition>{testimonial.position}</AuthorPosition>
               </TestimonialCard>
+              <Author>
+                <h4>{testimonial.author}</h4>
+                <p>{testimonial.position}</p>
+              </Author>
             </CarouselSlide>
           ))}
         </CarouselTrack>
@@ -234,7 +242,7 @@ export const CarouselSection = () => {
         </DotsContainer>
 
         <NavigationButton onClick={scrollNext}>
-          <img src='/Arrow-right.svg' alt='Arrow Right'/>
+          <img src='/Arrow-right.svg' alt='Arrow Right' />
         </NavigationButton>
       </NavigationContainer>
     </CarouselContainer>

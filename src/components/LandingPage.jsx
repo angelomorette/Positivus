@@ -26,11 +26,10 @@ const NavLinks = styled.div`
   gap: 40px;
   a {
     text-decoration: none;
-    color: #000000;
+    color: var(--black);
     font-weight: 400;
     font-size: 20px;
     line-height: 28px;
-    letter-spacing: 0%;
   }
 `
 
@@ -79,6 +78,7 @@ const LogoContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  width: fit-content;
 `
 
 const navigationLinks = [

@@ -7,9 +7,9 @@ const CaseCard = styled.div`
   width: 1234px;
   height: 326px;
   padding: 70px 60px 70px 60px;
-  background-color: #191A23;
+  background-color: var(--dark);
   border-radius: 45px;
-  border: #191A23;
+  border: var(--dark);
   gap: 64px;
   margin-top: 80px;
   margin-bottom: 140px;

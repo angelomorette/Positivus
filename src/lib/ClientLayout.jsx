@@ -5,8 +5,16 @@ import React from 'react'
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    --background: #ffffff;
-    --foreground: #000000;
+    --dark: #191A23;
+    --darkGrey: #292A32;
+    --white: #fff;
+    --grey: #F3F3F3;
+    --green: #B9FF66;
+    --black: #000000;
+    
+    --background: var(--white);
+    --foreground: var(--primary);
+    --breakpoint: '768px';
   }
 
   *, *::before, *::after {

@@ -10,8 +10,8 @@ const Card = styled.div`
   flex-direction: column;
   background-color: #fff;
   border-radius: 45px;
-  border: 1px solid #191A23;
-  box-shadow: 0px 5px 0px 0px #191A23;
+  border: 1px solid var(--dark);
+  box-shadow: 0px 5px 0px 0px var(--dark);
   padding: 40px 35px 0px 35px;
 `
 
@@ -88,24 +88,6 @@ const Div = styled.div`
   flex-direction: column;
   padding: 40px 35px 0px 35px;
 `
-
-// const PrimaryButton = styled.button`
-//   width: 264px;
-//   height: 68px;
-//   padding: 20px 35px;
-//   border-radius: 14px;
-//   border: solid #191A23;
-//   background-color: #191A23;
-//   color: #fff;
-//   cursor: pointer;
-//   font-weight: 400;
-//   font-size: 20px;
-//   line-height: 28px;
-//   white-space: nowrap;
-//   gap: 10px;
-//   align-items: center;
-//   justify-content: center;
-// `
 
 const TeamDiv = styled.div`
   display: flex;

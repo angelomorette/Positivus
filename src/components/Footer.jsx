@@ -2,10 +2,10 @@
 
 import React from "react"
 import styled from "styled-components"
-import { colors, GreenButton } from "../styles"
 import LinkedinIcon from "../../public/Linkedin-Icon"
 import XIcon from "../../public/X-Icon"
 import Logo from "../../public/Logo"
+import { GreenButton } from "../styles"
 
 const FooterContainer = styled.div`
     width: 100%;
@@ -16,7 +16,7 @@ const FooterContainer = styled.div`
     padding-left: 60px;
     padding-right: 60px;
     gap: 50px;
-    background-color: ${colors.primary};
+    background-color: var(--dark);
 `
 
 const FooterNavegation = styled.div`
@@ -43,9 +43,11 @@ const ContactInfo = styled.div`
 `
 
 const Heading = styled.h2`
-    color: ${colors.dark};
+    width: fit-content;
+    align-self: flex-start;
+    color: var(--black);
     padding: 0px 7px 0px 7px;
-    background-color: ${colors.green};
+    background-color: var(--green);
     border-radius: 7px;
     font-size: 20px;
     font-weight: 500;
@@ -57,7 +59,7 @@ const ContactText = styled.div`
     gap:20px;
     
     p{
-        color: ${colors.white};
+        color: var(--white);
         font-size: 18px;
         font-weight: 400;
         line-height: 100%;
@@ -67,7 +69,7 @@ const ContactText = styled.div`
 const NewsletterForm = styled.div`
     display: flex;
     align-items: center;
-    background-color: ${colors.darkGrey};
+    background-color: var(--darkGrey);
     border-radius: 14px;
     padding: 58px 40px 58px 40px;
     gap: 20px;
@@ -77,9 +79,9 @@ const EmailInput = styled.input`
     appearance: none;
     padding: 22px 35px 22px 35px;
     border-radius: 14px;
-    background-color: ${colors.darkGrey};
-    border: 1px solid ${colors.white};
-    color: ${colors.white};
+    background-color: var(--darkGrey);
+    border: 1px solid var(--white);
+    color: var(--white);
     width: 300px;
     height: 67px;
     gap: 10px;
@@ -87,7 +89,7 @@ const EmailInput = styled.input`
     font-weight: 400;
     
     &::placeholder {
-        color: ${colors.white};
+        color: var(--white);
     }
 
     &:focus {
@@ -95,26 +97,11 @@ const EmailInput = styled.input`
     }
 `
 
-const SubscribeButton = styled.button`
-    padding: 15px 25px;
-    border-radius: 6px;
-    background-color: ${colors.accent};
-    border: none;
-    color: ${colors.dark};
-    font-weight: 500;
-    cursor: pointer;
-    transition: opacity 0.2s ease;
-
-    &:hover {
-        opacity: 0.9;
-    }
-`
-
 const NavLinks = styled.div`
   display: flex;
   gap: 40px;
   a {
-    color: ${colors.white};
+    color: var(--white);
     font-weight: 400;
     font-size: 18px;
     line-height: 100%;
@@ -125,26 +112,28 @@ const NavLinks = styled.div`
   }
 `
 
-const NavIcons = styled.div`
+const NavIcons = styled.a`
     display: flex;
     gap: 20px;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 `
 
 const Policy = styled.div`
     padding-top: 50px;
     font-size: 18px;
     line-height: 28px;
-    color: ${colors.white};
+    color: var(--white);
     font-weight: 400;
-    border-top: 1px solid ${colors.white};
+    border-top: 1px solid var(--white);
     margin-top: 50px;
     display: flex;
     gap: 40px;
 
     a {
         text-decoration: underline;
+        cursor: pointer;
     }
 `
 
@@ -160,16 +149,19 @@ export default function Footer() {
     return (
         <FooterContainer>
             <FooterNavegation>
-                <Logo fill={colors.white} />
+                <a href="/" alt="Positivus logo">
+                    <Logo fill="var(--white)" />
+                </a>
+
                 <NavLinks>
                     {navigationLinks.map((link, index) => (
                         <a key={index} href={link.href}>{link.label}</a>
                     ))}
                 </NavLinks>
                 <NavIcons>
-                    <LinkedinIcon fill={colors.primary} bgCircle={colors.white} width="30" heigth="30" />
+                    <LinkedinIcon fill="var(--dark)" bgCircle="var(--white)" width="30" heigth="30" />
                     <img src="/Facebook-Icon.svg" width={30} height={30}></img>
-                    <XIcon fill={colors.primary} bgCircle={colors.white}></XIcon>
+                    <XIcon fill="var(--dark)" bgCircle="var(--white)"></XIcon>
                 </NavIcons>
             </FooterNavegation>
             <FooterContact>
@@ -188,12 +180,12 @@ export default function Footer() {
                     <GreenButton>Subscribe to news</GreenButton>
                 </NewsletterForm>
             </FooterContact>
-                <Policy>
-                    © 2023 Positivus. All Rights Reserved.
-                    <a>
-                        Privacy Policy
-                    </a>
-                </Policy>
+            <Policy>
+                © 2023 Positivus. All Rights Reserved.
+                <a>
+                    Privacy Policy
+                </a>
+            </Policy>
         </FooterContainer>
     )
 }

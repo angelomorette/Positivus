@@ -2,7 +2,6 @@
 
 import React from "react"
 import styled from "styled-components"
-import { colors } from "../styles/Theme"
 import { PrimaryButton } from "../styles"
 
 const ContactContainer = styled.div`
@@ -15,7 +14,7 @@ const ContactWrapper = styled.div`
     display: flex;
     width: 100%;
     height: 773px;
-    background-color: ${colors.grey};
+    background-color: var(--grey);
     border-radius: 45px;
     justify-content: space-between;
     direction: row;
@@ -35,23 +34,23 @@ const ContactForm = styled.div`
   appearance: none;
   width: 28px;
   height: 28px;
-  border: 2px solid ${colors.primary};
+  border: 2px solid var(--dark);
   border-radius: 50%;
   position: relative;
   cursor: pointer;
-  background-color: ${colors.white};
+  background-color: var(--white);
   margin: 0px;
 }
 
 input[type="radio"]:checked {
-  border-color: ${colors.dark};
+  border-color:  var(--black);
 }
 
 input[type="radio"]:checked::after {
   content: '';
   width: 12px;
   height: 12px;
-  background-color: ${colors.green};
+  background-color: var(--green);
   position: absolute;
   border-radius: 50%;
   top: 50%;
@@ -91,11 +90,11 @@ input[type="radio"]:checked::after {
     appearance: none;
     width: 556px;
     height: 59px;
-    border: 1px solid ${colors.primary};
+    border: 1px solid var(--dark);
     border-radius: 14px;
     padding: 18px 30px 18px 30px;
     gap: 10px;
-    background-color: ${colors.white};
+    background-color: var(--white);
     margin-bottom: 25px;
   }
   
@@ -104,11 +103,11 @@ input[type="radio"]:checked::after {
     appearance: none;
     width: 556px;
     height: 190px;
-    border: 1px solid ${colors.primary};
+    border: 1px solid var(--dark);
     border-radius: 14px;
     padding: 18px 30px 18px 30px;
     gap: 10px;
-    background-color: ${colors.white};
+    background-color: var(--white);
     margin-bottom: 40px;
     resize: none;
   }

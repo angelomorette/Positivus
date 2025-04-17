@@ -17,9 +17,9 @@ const Card = styled.div`
   display: flex;
   justify-content: space-between;
   border-radius: 45px;
-  border: 1px solid #191A23;
+  border: 1px solid var(--dark);
   padding: 50px;
-  box-shadow: 0px 5px 0px 0px #191A23;
+  box-shadow: 0px 5px 0px 0px var(--dark);
   background-color: ${props => props.$bg || '#fff'};
 `
 
