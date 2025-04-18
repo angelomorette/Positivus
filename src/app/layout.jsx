@@ -1,14 +1,14 @@
-'use client'
+'use client';
 
-import { Space_Grotesk } from 'next/font/google'
-import StyledComponentsRegistry from '../lib/StyledComponentsRegistry'
-import ClientLayout from '../lib/ClientLayout'
+import { Space_Grotesk } from 'next/font/google';
+import StyledComponentsRegistry from '../lib/StyledComponentsRegistry';
+import ClientLayout from '../lib/ClientLayout';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
   weight: ['400', '500'],
   variable: '--font-space-grotesk',
-})
+});
 
 export default function RootLayout({ children }) {
   return (
@@ -20,11 +20,9 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <StyledComponentsRegistry>
-          <ClientLayout>
-            {children}
-          </ClientLayout>
+          <ClientLayout>{children}</ClientLayout>
         </StyledComponentsRegistry>
       </body>
     </html>
-  )
+  );
 }

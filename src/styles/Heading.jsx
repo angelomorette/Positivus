@@ -1,9 +1,8 @@
-import styled, { css } from 'styled-components'
-
+import styled, { css } from 'styled-components';
 
 const variantStyles = {
   green: css`
-    background-color: #B9FF66;
+    background-color: #b9ff66;
     color: black;
   `,
   white: css`
@@ -11,10 +10,10 @@ const variantStyles = {
     color: black;
   `,
   black: css`
-    background-color: #1A1A1A;
+    background-color: #1a1a1a;
     color: white;
   `,
-}
+};
 
 const sizeStyles = {
   h1: css`
@@ -29,7 +28,7 @@ const sizeStyles = {
     font-size: 32px;
     height: 43px;
   `,
-}
+};
 
 export const Heading = styled.h2`
   font-weight: 500;
@@ -45,6 +44,6 @@ export const Heading = styled.h2`
 
   ${({ variant }) => variantStyles[variant] || variantStyles.green}
   ${({ size }) => sizeStyles[size] || sizeStyles.h2}
-`
+`;
 
-export default Heading
+export default Heading;

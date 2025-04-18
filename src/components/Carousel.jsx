@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
@@ -8,34 +8,39 @@ import Dot from '../../public/Dot';
 const testimonials = [
   {
     id: 1,
-    content: "We have been working with PositHue for the past year and have seen a significant increase in website traffic since. Their team is highly professional, responsive, and truly cares about the success of our business. We highly recommend PositHue to any company looking to grow their online presence.",
-    author: "John Smith",
-    position: "Marketing Director at XYZ Corp."
+    content:
+      'We have been working with PositHue for the past year and have seen a significant increase in website traffic since. Their team is highly professional, responsive, and truly cares about the success of our business. We highly recommend PositHue to any company looking to grow their online presence.',
+    author: 'John Smith',
+    position: 'Marketing Director at XYZ Corp.',
   },
   {
     id: 2,
-    content: "We have been working with PositHue for the past year and have seen a significant increase in website traffic since. Their team is highly professional, responsive, and truly cares about the success of our business. We highly recommend PositHue to any company looking to grow their online presence.",
-    author: "John Smith",
-    position: "Marketing Director at XYZ Corp."
+    content:
+      'We have been working with PositHue for the past year and have seen a significant increase in website traffic since. Their team is highly professional, responsive, and truly cares about the success of our business. We highly recommend PositHue to any company looking to grow their online presence.',
+    author: 'John Smith',
+    position: 'Marketing Director at XYZ Corp.',
   },
   {
     id: 3,
-    content: "We have been working with PositHue for the past year and have seen a significant increase in website traffic since. Their team is highly professional, responsive, and truly cares about the success of our business. We highly recommend PositHue to any company looking to grow their online presence.",
-    author: "John Smith",
-    position: "Marketing Director at XYZ Corp."
+    content:
+      'We have been working with PositHue for the past year and have seen a significant increase in website traffic since. Their team is highly professional, responsive, and truly cares about the success of our business. We highly recommend PositHue to any company looking to grow their online presence.',
+    author: 'John Smith',
+    position: 'Marketing Director at XYZ Corp.',
   },
   {
     id: 4,
-    content: "We have been working with PositHue for the past year and have seen a significant increase in website traffic since. Their team is highly professional, responsive, and truly cares about the success of our business. We highly recommend PositHue to any company looking to grow their online presence.",
-    author: "John Smith",
-    position: "Marketing Director at XYZ Corp."
+    content:
+      'We have been working with PositHue for the past year and have seen a significant increase in website traffic since. Their team is highly professional, responsive, and truly cares about the success of our business. We highly recommend PositHue to any company looking to grow their online presence.',
+    author: 'John Smith',
+    position: 'Marketing Director at XYZ Corp.',
   },
   {
     id: 5,
-    content: "We have been working with PositHue for the past year and have seen a significant increase in website traffic since. Their team is highly professional, responsive, and truly cares about the success of our business. We highly recommend PositHue to any company looking to grow their online presence.",
-    author: "John Smith",
-    position: "Marketing Director at XYZ Corp."
-  }
+    content:
+      'We have been working with PositHue for the past year and have seen a significant increase in website traffic since. Their team is highly professional, responsive, and truly cares about the success of our business. We highly recommend PositHue to any company looking to grow their online presence.',
+    author: 'John Smith',
+    position: 'Marketing Director at XYZ Corp.',
+  },
 ];
 
 const CarouselContainer = styled.div`
@@ -69,7 +74,7 @@ const CarouselTrack = styled.div`
 const CarouselSlide = styled.div`
   flex: 0 0 33.333%;
   padding: 0 50px;
-  opacity: ${props => props.isSelected ? 1 : 0.5};
+  opacity: ${props => (props.$isSelected ? 1 : 0.5)};
   transition: opacity 0.3s ease;
 `;
 
@@ -81,13 +86,13 @@ const TestimonialCard = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transform: ${props => props.isSelected ? 'scale(1)' : 'scale(0.9)'};
+  transform: ${props => (props.$isSelected ? 'scale(1)' : 'scale(0.9)')};
   transition: transform 0.3s ease;
 `;
 
 const CardBackground = styled.img.attrs({
   src: '/Bubble.svg',
-  alt: 'Bubble background'
+  alt: 'Bubble background',
 })`
   position: absolute;
   inset: 0;
@@ -98,7 +103,7 @@ const CardBackground = styled.img.attrs({
 
 const TestimonialText = styled.p`
   width: 502px;
-  color: #C8C8C9;
+  color: #c8c8c9;
   font-size: 1rem;
   line-height: 1.6;
   text-align: center;
@@ -111,7 +116,7 @@ const TestimonialText = styled.p`
 const Author = styled.div`
   margin-top: 20px;
   margin-left: 80px;
-  h4{
+  h4 {
     margin: 0px;
     color: var(--green);
     font-weight: 600;
@@ -125,8 +130,7 @@ const Author = styled.div`
   }
 `;
 
-const AuthorPosition = styled.p`
-`;
+const AuthorPosition = styled.p``;
 
 const NavigationContainer = styled.div`
   display: flex;
@@ -178,10 +182,7 @@ export const CarouselSection = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState([]);
 
-  const scrollTo = useCallback(
-    (index) => emblaApi && emblaApi.scrollTo(index),
-    [emblaApi]
-  );
+  const scrollTo = useCallback(index => emblaApi && emblaApi.scrollTo(index), [emblaApi]);
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -193,10 +194,10 @@ export const CarouselSection = () => {
 
     onSelect();
     setScrollSnaps(emblaApi.scrollSnapList());
-    emblaApi.on("select", onSelect);
+    emblaApi.on('select', onSelect);
 
     return () => {
-      emblaApi.off("select", onSelect);
+      emblaApi.off('select', onSelect);
     };
   }, [emblaApi, onSelect]);
 
@@ -208,11 +209,8 @@ export const CarouselSection = () => {
       <CarouselWrapper ref={emblaRef}>
         <CarouselTrack>
           {testimonials.map((testimonial, index) => (
-            <CarouselSlide
-              key={testimonial.id}
-              isSelected={index === selectedIndex}
-            >
-              <TestimonialCard isSelected={index === selectedIndex}>
+            <CarouselSlide key={testimonial.id} $isSelected={index === selectedIndex}>
+              <TestimonialCard $isSelected={index === selectedIndex}>
                 <CardBackground />
                 <TestimonialText>"{testimonial.content}"</TestimonialText>
               </TestimonialCard>
@@ -227,26 +225,23 @@ export const CarouselSection = () => {
 
       <NavigationContainer>
         <NavigationButton onClick={scrollPrev}>
-          <img src='/Arrow-left.svg' alt='Arrow Left' />
+          <img src="/Arrow-left.svg" alt="Arrow Left" />
         </NavigationButton>
 
         <DotsContainer>
           {scrollSnaps.map((_, index) => (
-            <DotWrapper
-              key={index}
-              onClick={() => scrollTo(index)}
-            >
+            <DotWrapper key={index} onClick={() => scrollTo(index)}>
               <Dot fill={index === selectedIndex ? '#00FF00' : '#ffffff'} />
             </DotWrapper>
           ))}
         </DotsContainer>
 
         <NavigationButton onClick={scrollNext}>
-          <img src='/Arrow-right.svg' alt='Arrow Right' />
+          <img src="/Arrow-right.svg" alt="Arrow Right" />
         </NavigationButton>
       </NavigationContainer>
     </CarouselContainer>
-  )
-}
+  );
+};
 
-export default CarouselSection; 
+export default CarouselSection;

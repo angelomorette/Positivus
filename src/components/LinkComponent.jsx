@@ -1,8 +1,8 @@
-'use client'
+'use client';
 
-import React from 'react'
-import styled from 'styled-components'
-import IconLink from '../../public/IconLink'
+import React from 'react';
+import styled from 'styled-components';
+import IconLink from '../../public/IconLink';
 
 const LinkWrapper = styled.a`
   display: flex;
@@ -16,59 +16,65 @@ const LinkWrapper = styled.a`
   color: ${props => props.$textColor || '#000'};
   width: ${props => props.$width};
   height: ${props => props.$height};
-`
+`;
 
-export default function LinkComponent({ label, href = "#", variant = 'black', width = '41', height = '41' }) {
+export default function LinkComponent({
+  label,
+  href = '#',
+  variant = 'black',
+  width = '41',
+  height = '41',
+}) {
   const variants = {
     white: {
       circleBg: '#FFFFFF',
       iconColor: '#B9FF66',
-      textColor: '#FFFFFF'
+      textColor: '#FFFFFF',
     },
     whiteSecondary: {
       circleBg: '#FFFFFF',
       iconColor: '#000000',
-      textColor: '#FFFFFF'
+      textColor: '#FFFFFF',
     },
     black: {
       circleBg: '#000000',
       iconColor: '#B9FF66',
-      textColor: '#000000'
+      textColor: '#000000',
     },
     blackSecondary: {
       circleBg: '#000000',
       iconColor: '#FFFFFF',
-      textColor: '#000000'
+      textColor: '#000000',
     },
     green: {
       circleBg: '#B9FF66',
       iconColor: '#000000',
-      textColor: '#000000'
+      textColor: '#000000',
     },
     greenSencondary: {
       circleBg: '#B9FF66',
       iconColor: '#FFFFFF',
-      textColor: '#FFFFFF'
+      textColor: '#FFFFFF',
     },
     simpleGreen: {
       circleBg: 'transparent',
       iconColor: '#B9FF66',
-      textColor: '#B9FF66'
+      textColor: '#B9FF66',
     },
     simpleWhite: {
       circleBg: 'transparent',
       iconColor: '#FFFFFF',
-      textColor: '#FFFFFF'
+      textColor: '#FFFFFF',
     },
     simpleBlack: {
       circleBg: 'transparent',
       iconColor: '#000000',
-      textColor: '#000000'
-    }
-  }
+      textColor: '#000000',
+    },
+  };
 
-  const { circleBg, iconColor, textColor } = variants[variant] || variants.black
-  const isSimple = variant.startsWith('simple')
+  const { circleBg, iconColor, textColor } = variants[variant] || variants.black;
+  const isSimple = variant.startsWith('simple');
 
   return (
     <LinkWrapper href={href} $textColor={textColor} alt="link" height={height}>
@@ -84,5 +90,5 @@ export default function LinkComponent({ label, href = "#", variant = 'black', wi
         </>
       )}
     </LinkWrapper>
-  )
+  );
 }

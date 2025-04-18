@@ -1,7 +1,7 @@
-'use client'
+'use client';
 
-import styled, { createGlobalStyle } from 'styled-components'
-import React from 'react'
+import styled, { createGlobalStyle } from 'styled-components';
+import React from 'react';
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -41,14 +41,14 @@ const GlobalStyle = createGlobalStyle`
   label {
     font-family:  var(--font-space-grotesk);
   }
-`
+`;
 
 const Page = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100svh;
   padding: 60px 100px 0px 100px;
-`
+`;
 
 export default function ClientLayout({ children }) {
   return (
@@ -56,5 +56,5 @@ export default function ClientLayout({ children }) {
       <GlobalStyle />
       <Page>{children}</Page>
     </>
-  )
+  );
 }

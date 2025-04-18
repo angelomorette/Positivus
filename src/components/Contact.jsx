@@ -1,26 +1,26 @@
-"use client"
+'use client';
 
-import React from "react"
-import styled from "styled-components"
-import { PrimaryButton } from "../styles"
+import React from 'react';
+import styled from 'styled-components';
+import { PrimaryButton } from '../styles';
 
 const ContactContainer = styled.div`
-    display: flex;
-    margin-top: 80px;
-    margin-bottom: 140px;
-`
+  display: flex;
+  margin-top: 80px;
+  margin-bottom: 140px;
+`;
 
 const ContactWrapper = styled.div`
-    display: flex;
-    width: 100%;
-    height: 773px;
-    background-color: var(--grey);
-    border-radius: 45px;
-    justify-content: space-between;
-    direction: row;
-    position: relative;
-    align-items: center;
-`
+  display: flex;
+  width: 100%;
+  height: 773px;
+  background-color: var(--grey);
+  border-radius: 45px;
+  justify-content: space-between;
+  direction: row;
+  position: relative;
+  align-items: center;
+`;
 
 const ContactForm = styled.div`
   display: flex;
@@ -30,33 +30,33 @@ const ContactForm = styled.div`
   margin-bottom: 80px;
   margin-left: 100px;
 
-  input[type="radio"] {
-  appearance: none;
-  width: 28px;
-  height: 28px;
-  border: 2px solid var(--dark);
-  border-radius: 50%;
-  position: relative;
-  cursor: pointer;
-  background-color: var(--white);
-  margin: 0px;
-}
+  input[type='radio'] {
+    appearance: none;
+    width: 28px;
+    height: 28px;
+    border: 2px solid var(--dark);
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    background-color: var(--white);
+    margin: 0px;
+  }
 
-input[type="radio"]:checked {
-  border-color:  var(--black);
-}
+  input[type='radio']:checked {
+    border-color: var(--black);
+  }
 
-input[type="radio"]:checked::after {
-  content: '';
-  width: 12px;
-  height: 12px;
-  background-color: var(--green);
-  position: absolute;
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+  input[type='radio']:checked::after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background-color: var(--green);
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
   label {
     font-size: 18px;
@@ -72,7 +72,7 @@ input[type="radio"]:checked::after {
     gap: 35px;
     margin-bottom: 40px;
   }
-  
+
   > div > div {
     display: flex;
     align-items: center;
@@ -86,7 +86,7 @@ input[type="radio"]:checked::after {
     margin-bottom: 5px;
   }
 
-  input[type="text"] {
+  input[type='text'] {
     appearance: none;
     width: 556px;
     height: 59px;
@@ -97,8 +97,7 @@ input[type="radio"]:checked::after {
     background-color: var(--white);
     margin-bottom: 25px;
   }
-  
-  
+
   textarea {
     appearance: none;
     width: 556px;
@@ -112,21 +111,21 @@ input[type="radio"]:checked::after {
     resize: none;
   }
 
-  input[type="text"]:focus,
+  input[type='text']:focus,
   textarea:focus {
-  outline: none;
-}
-`
+    outline: none;
+  }
+`;
 
 const ContactButton = styled(PrimaryButton)`
   width: 556px;
   height: 68px;
-`
+`;
 
 const IllustrarionDiv = styled.div`
-    position: absolute;
-    right: -305px;
-`
+  position: absolute;
+  right: -305px;
+`;
 
 export default function Contact() {
   return (
@@ -154,9 +153,9 @@ export default function Contact() {
           <ContactButton>Send Message</ContactButton>
         </ContactForm>
         <IllustrarionDiv>
-          <img src={"/Contact-Illustration.svg"} width={649.86} height={648} />
+          <img src={'/Contact-Illustration.svg'} width={649.86} height={648} />
         </IllustrarionDiv>
       </ContactWrapper>
     </ContactContainer>
-  )
+  );
 }

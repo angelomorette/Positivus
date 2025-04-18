@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const ButtonBase = styled.button`
   width: fit-content;
@@ -9,19 +9,19 @@ export const ButtonBase = styled.button`
   font-weight: 400;
   font-size: 20px;
   gap: 10px;
-  line-height: 1; 
-`
+  line-height: 1;
+`;
 
 export const OutlinedButton = styled(ButtonBase)`
   border: 1px solid var(--dark);
   background-color: var(--white);
-`
+`;
 
 export const PrimaryButton = styled(ButtonBase)`
   border: solid var(--dark);
   background-color: var(--dark);
   color: var(--white);
-` 
+`;
 
 export const GreenButton = styled(ButtonBase)`
   height: 68px;
@@ -31,4 +31,4 @@ export const GreenButton = styled(ButtonBase)`
   background-color: var(--green);
   color: var(--black);
   border: none;
-` 
+`;
