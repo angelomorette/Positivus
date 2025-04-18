@@ -5,7 +5,7 @@ Este projeto é uma implementação da landing page "Positivus Free" baseada no 
 ## 🔗 Links
 
 - [Design no Figma](https://www.figma.com/design/40Fc50DMZxIZFIaA1zuZtb/Positivus-Landing-Page-Design-(Community)?node-id=330-762&t=XsmsNyhj5icTOPim-1)
-- [Página em Produção](https://positivus.vercel.app)
+- [Página em Produção](https://positivus-kappa.vercel.app)
 
 ## 🚀 Tecnologias Utilizadas
 
